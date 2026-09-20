@@ -5,13 +5,7 @@ same behaviour — just `index.html`, stylesheets and a few small scripts.
 
 ## Run it
 
-Open `index.html` directly in a browser, or serve the folder (recommended):
-
-```
-npx serve .
-# or
-python -m http.server 8080
-```
+Open `index.html` directly in a browser
 
 No build step. Deploy by pointing GitHub Pages (or any static host) at this folder.
 
