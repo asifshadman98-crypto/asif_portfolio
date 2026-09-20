@@ -1,0 +1,109 @@
+/* ---------------------------------------------------------------
+   Education: vertical timeline with icon nodes and period badges
+   (Education.tsx).
+---------------------------------------------------------------- */
+
+.timeline {
+  position: relative;
+  max-width: 48rem;
+}
+
+/* Vertical line behind the icon nodes */
+.timeline-line {
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 22px;
+  width: 1px;
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--accent) 60%, transparent),
+    var(--border),
+    transparent
+  );
+}
+
+.timeline-list > li + li {
+  margin-top: 2rem;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.timeline-icon {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  border-radius: 9999px;
+  background-color: var(--surface);
+  color: var(--accent);
+}
+
+.timeline-card {
+  flex: 1;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background-color: var(--card);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.timeline-card:hover {
+  transform: translateY(-0.25rem);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.timeline-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.timeline-school {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.period-badge {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  background-color: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.period-badge.current {
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+  color: var(--accent);
+}
+
+.timeline-degree {
+  margin-top: 0.25rem;
+  color: var(--slate-300);
+}
+
+.detail-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.detail-chips .chip {
+  color: var(--muted);
+}

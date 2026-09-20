@@ -1,0 +1,96 @@
+/* ---------------------------------------------------------------
+   About: intro card + small info cards with icons (About.tsx).
+---------------------------------------------------------------- */
+
+.about-grid {
+  display: grid;
+  align-items: start;
+  gap: 2.5rem;
+}
+
+.about-card {
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background-color: var(--card);
+}
+
+.about-lead {
+  line-height: 1.625;
+  color: var(--slate-300);
+}
+
+.about-more {
+  margin-top: 1.25rem;
+  line-height: 1.625;
+  color: var(--muted);
+}
+
+.info-cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background-color: var(--card);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-0.25rem);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.info-icon {
+  display: inline-flex;
+  padding: 0.625rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: 0.5rem;
+  background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+  color: var(--accent);
+}
+
+.info-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.info-list {
+  margin-top: 0.25rem;
+}
+
+.info-list li {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.info-list li + li {
+  margin-top: 0.125rem;
+}
+
+.about-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.about-note .icon {
+  color: var(--accent);
+}
+
+@media (min-width: 48rem) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

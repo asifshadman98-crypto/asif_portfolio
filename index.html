@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asif Shadman Khan | Software Engineering Student</title>
+  <meta
+    name="description"
+    content="Portfolio of Asif Shadman Khan, a third-year Software Engineering student at Metropolitan University, learning and building projects with Python, Java, React, and Next.js."
+  />
+  <meta
+    name="keywords"
+    content="Asif Shadman Khan, Software Engineering Student, Metropolitan University, Portfolio"
+  />
+  <meta name="author" content="Asif Shadman Khan" />
+  <meta name="theme-color" content="#0a0f1a" />
+
+  <!-- Open Graph (matches the Next.js metadata) -->
+  <meta property="og:title" content="Asif Shadman Khan | Software Engineering Student" />
+  <meta
+    property="og:description"
+    content="Third-year Software Engineering student at Metropolitan University. Learning, building projects, and developing technical skills."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://asifshadman98-crypto.github.io/portfolio/" />
+  <meta property="og:site_name" content="Asif Shadman Khan — Portfolio" />
+
+  <!-- Fonts: Inter + JetBrains Mono (same families as next/font) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Mark JS availability early so .reveal elements only hide when JS runs -->
+  <script>document.documentElement.classList.add("js");</script>
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components/navbar.css" />
+  <link rel="stylesheet" href="css/components/hero.css" />
+  <link rel="stylesheet" href="css/components/about.css" />
+  <link rel="stylesheet" href="css/components/education.css" />
+  <link rel="stylesheet" href="css/components/skills.css" />
+  <link rel="stylesheet" href="css/components/projects.css" />
+  <link rel="stylesheet" href="css/components/contact.css" />
+  <link rel="stylesheet" href="css/components/footer.css" />
+</head>
+
+<body>
+
+  <!-- Icon sprite: Lucide paths + GitHub mark (Simple Icons).
+       Placed inline at the top of <body> so the icons also render
+       when index.html is opened directly from disk (file://). -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 6h16" /><path d="M4 12h16" /><path d="M4 18h16" />
+  </symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 6 6 18" /><path d="m6 6 12 12" />
+  </symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+  </symbol>
+  <symbol id="i-book-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+  </symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m18 16 4-4-4-4" /><path d="m6 8-4 4 4 4" /><path d="m14.5 4-5 16" />
+  </symbol>
+  <symbol id="i-graduation-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+    <path d="M22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+  </symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
+    <path d="M20 3v4" /><path d="M22 5h-4" /><path d="M4 17v2" /><path d="M5 18H3" />
+  </symbol>
+  <symbol id="i-school" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 22v-4a2 2 0 1 0-4 0v4" />
+    <path d="m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10" />
+    <path d="M18 5v17" /><path d="m4 5 8-3 8 3" /><path d="M4 22V5" />
+  </symbol>
+  <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="12" cy="5" rx="9" ry="3" />
+    <path d="M3 5V19A9 3 0 0 0 21 19V5" /><path d="M3 12A9 3 0 0 0 21 12" />
+  </symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" />
+  </symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+  </symbol>
+  <symbol id="i-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+    <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+    <path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" />
+  </symbol>
+  <symbol id="i-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" />
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect width="20" height="16" x="2" y="4" rx="2" />
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+  </symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+  </symbol>
+  </svg>
+
+  <!-- ================= Navbar ================= -->
+  <header class="site-header" id="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a href="#home" class="brand">ASIF SHADMAN KHAN</a>
+
+      <!-- Desktop links -->
+      <div class="nav-links">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="https://github.com/asifshadman98-crypto" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" class="icon-btn">
+          <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button type="button" class="icon-btn menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="icon-md icon-open" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon-md icon-close" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="https://github.com/asifshadman98-crypto" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+            GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= Hero ================= -->
+    <section id="home" class="hero bg-grid">
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div>
+          <p class="status-badge anim-fade-up">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            SOFTWARE ENGINEERING STUDENT
+          </p>
+
+          <h1 class="hero-title anim-fade-up" style="animation-delay: 0.1s">
+            Hi, I'm
+            <span class="gradient-text">Asif Shadman Khan</span>.
+          </h1>
+
+          <p class="hero-subtitle anim-fade-up" style="animation-delay: 0.2s">
+            Software Engineering Student · 3rd Year
+          </p>
+
+          <p class="hero-blurb anim-fade-up" style="animation-delay: 0.3s">
+            I'm a third-year Software Engineering student at Metropolitan
+            University, interested in software development, web technologies,
+            and exploring practical applications of AI. I'm currently
+            building my skills through coursework, personal projects, and
+            hands-on development.
+          </p>
+
+          <div class="hero-actions anim-fade-up" style="animation-delay: 0.4s">
+            <a href="#projects" class="btn btn-primary">
+              View My Projects
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+            </a>
+            <a href="https://github.com/asifshadman98-crypto" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Photo with decorative frame -->
+        <div class="hero-photo anim-fade-up" style="animation-delay: 0.35s; animation-duration: 0.8s">
+          <div class="anim-float-slow">
+            <div class="photo-frame-outer" aria-hidden="true"></div>
+            <div class="photo-frame">
+              <img src="assets/profile.png" alt="Photo of Asif Shadman Khan" width="958" height="960" />
+            </div>
+          </div>
+
+          <!-- Small decorative floating tag -->
+          <div class="photo-tag">&lt;/&gt; learning by building</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= About ================= -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-label">ABOUT ME</p>
+          <h2 class="section-title">A quick introduction</h2>
+          <p class="section-desc">
+            Who I am, what I study, and where my interests are heading.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="reveal">
+            <div class="about-card">
+              <p class="about-lead">
+                I'm a third-year Software Engineering student at
+                Metropolitan University, interested in software development,
+                web technologies, and exploring practical applications of AI.
+              </p>
+              <p class="about-more">
+                I'm currently building my skills through coursework,
+                personal projects, and hands-on development — learning something
+                new with every project I take on.
+              </p>
+            </div>
+          </div>
+
+          <div class="info-cards">
+            <div class="reveal">
+              <div class="info-card">
+                <div class="info-icon">
+                  <svg class="icon-md" aria-hidden="true"><use href="#i-graduation-cap"></use></svg>
+                </div>
+                <div>
+                  <h3 class="info-title">Software Engineering</h3>
+                  <ul class="info-list">
+                    <li>3rd Year Student</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal" data-delay="100">
+              <div class="info-card">
+                <div class="info-icon">
+                  <svg class="icon-md" aria-hidden="true"><use href="#i-book-open"></use></svg>
+                </div>
+                <div>
+                  <h3 class="info-title">Metropolitan University</h3>
+                  <ul class="info-list">
+                    <li>CGPA 3.25</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal" data-delay="200">
+              <div class="info-card">
+                <div class="info-icon">
+                  <svg class="icon-md" aria-hidden="true"><use href="#i-code"></use></svg>
+                </div>
+                <div>
+                  <h3 class="info-title">Interested In</h3>
+                  <ul class="info-list">
+                    <li>Software Development</li>
+                    <li>Web Technologies</li>
+                    <li>AI</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="about-note reveal" data-delay="150">
+          <svg class="icon" aria-hidden="true"><use href="#i-sparkles"></use></svg>
+          Focused on learning the fundamentals well before moving to the
+          advanced stuff.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= Education ================= -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-label">EDUCATION</p>
+          <h2 class="section-title">My academic journey</h2>
+          <p class="section-desc">
+            Where I've studied and what I'm working towards.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <!-- Vertical timeline line -->
+          <div class="timeline-line" aria-hidden="true"></div>
+
+          <ol class="timeline-list">
+            <li>
+              <div class="reveal">
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <svg class="icon-md" aria-hidden="true"><use href="#i-graduation-cap"></use></svg>
+                  </div>
+                  <div class="timeline-card">
+                    <div class="timeline-head">
+                      <h3 class="timeline-school">Metropolitan University</h3>
+                      <span class="period-badge current">2024 – Present</span>
+                    </div>
+                    <p class="timeline-degree">Software Engineering</p>
+                    <div class="detail-chips">
+                      <span class="chip">3rd Year</span>
+                      <span class="chip">CGPA 3.25</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="reveal" data-delay="120">
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <svg class="icon-md" aria-hidden="true"><use href="#i-school"></use></svg>
+                  </div>
+                  <div class="timeline-card">
+                    <div class="timeline-head">
+                      <h3 class="timeline-school">RISE (Royal Institute of Smart Education)</h3>
+                      <span class="period-badge">2024</span>
+                    </div>
+                    <p class="timeline-degree">A Level</p>
+                    <div class="detail-chips">
+                      <span class="chip">B Grade</span>
+                      <span class="chip">70%+ marks</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="reveal" data-delay="240">
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <svg class="icon-md" aria-hidden="true"><use href="#i-school"></use></svg>
+                  </div>
+                  <div class="timeline-card">
+                    <div class="timeline-head">
+                      <h3 class="timeline-school">RISE (Royal Institute of Smart Education)</h3>
+                      <span class="period-badge">2022</span>
+                    </div>
+                    <p class="timeline-degree">O Level</p>
+                    <div class="detail-chips">
+                      <span class="chip">B Grade</span>
+                      <span class="chip">70%+ marks</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Skills ================= -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-label">SKILLS</p>
+          <h2 class="section-title">Technologies I work with</h2>
+          <p class="section-desc">
+            Languages, frameworks, and tools I've been learning and using through my coursework and projects.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="reveal">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <svg class="icon-md" aria-hidden="true"><use href="#i-code"></use></svg>
+              </div>
+              <h3 class="skill-category">Programming</h3>
+              <ul class="skill-tags">
+                <li class="chip">Java</li>
+                <li class="chip">Python</li>
+                <li class="chip">C</li>
+                <li class="chip">C++</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="reveal" data-delay="100">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <svg class="icon-md" aria-hidden="true"><use href="#i-globe"></use></svg>
+              </div>
+              <h3 class="skill-category">Web Development</h3>
+              <ul class="skill-tags">
+                <li class="chip">HTML</li>
+                <li class="chip">CSS</li>
+                <li class="chip">JavaScript</li>
+                <li class="chip">React.js</li>
+                <li class="chip">Next.js</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="reveal" data-delay="200">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <svg class="icon-md" aria-hidden="true"><use href="#i-database"></use></svg>
+              </div>
+              <h3 class="skill-category">Database</h3>
+              <ul class="skill-tags">
+                <li class="chip">MySQL</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="reveal" data-delay="300">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <svg class="icon-md" aria-hidden="true"><use href="#i-wrench"></use></svg>
+              </div>
+              <h3 class="skill-category">Tools</h3>
+              <ul class="skill-tags">
+                <li class="chip">Git</li>
+                <li class="chip">GitHub</li>
+                <li class="chip">VS Code</li>
+                <li class="chip">Figma</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Projects ================= -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-label">PROJECTS</p>
+          <h2 class="section-title">Things I've built and designed</h2>
+          <p class="section-desc">
+            A look at what I've been working on — from coursework ideas to personal experiments.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- AI Thesis Analyzer -->
+          <div class="reveal">
+            <article class="project-card">
+              <div class="project-preview preview-thesis">
+                <div class="preview-row">
+                  <svg class="icon" aria-hidden="true"><use href="#i-file-text"></use></svg>
+                  <span>thesis.pdf → extracting sections…</span>
+                </div>
+                <div class="skeleton-group">
+                  <div class="skeleton skeleton-accent w-3-4"></div>
+                  <div class="skeleton w-full"></div>
+                  <div class="skeleton w-5-6"></div>
+                </div>
+                <div class="preview-output">→ concise overview generated</div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">AI Thesis Analyzer</h3>
+                <p class="project-desc">
+                  A Python-based tool developed in Google Colab that processes thesis PDFs, identifies and extracts important sections, and generates a concise overview from the selected content using a language model.
+                </p>
+                <div class="project-tags">
+                  <span class="chip">Python</span>
+                  <span class="chip">Google Colab</span>
+                  <span class="chip">PDF Processing</span>
+                  <span class="chip">Language Model</span>
+                </div>
+                <div class="project-link-wrap">
+                  <a href="https://github.com/asifshadman98-crypto" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Flames Musical Club -->
+          <div class="reveal" data-delay="120">
+            <article class="project-card">
+              <div class="project-preview preview-design">
+                <div class="mock-window">
+                  <div class="mock-titlebar">
+                    <span class="mock-dot rose"></span>
+                    <span class="mock-dot amber"></span>
+                    <span class="mock-dot emerald"></span>
+                    <span class="mock-filename">flames-music-club.fig</span>
+                  </div>
+                  <div class="mock-body">
+                    <div class="mock-avatar">
+                      <svg class="icon" aria-hidden="true"><use href="#i-music"></use></svg>
+                    </div>
+                    <div class="mock-lines">
+                      <div class="mock-line lg"></div>
+                      <div class="mock-line full"></div>
+                      <div class="mock-line two-thirds"></div>
+                      <div class="mock-button"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Flames Musical Club — Website Design</h3>
+                <p class="project-desc">
+                  A Figma-based website design concept for Flames Musical Club, focusing on a clean and engaging interface for presenting the club, its activities, and musical content.
+                </p>
+                <div class="project-tags">
+                  <span class="chip">Figma</span>
+                  <span class="chip">UI/UX</span>
+                  <span class="chip">Web Design</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <p class="projects-note reveal" data-delay="200">
+          More projects are on the way as I keep learning and building.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= Contact ================= -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-glow" aria-hidden="true"></div>
+
+          <p class="contact-label">Contact</p>
+          <h2 class="contact-title">Let's Connect</h2>
+          <p class="contact-text">
+            Feel free to reach out if you'd like to connect or take a
+            look at what I'm building.
+          </p>
+
+          <div class="contact-actions">
+            <a href="mailto:asifshadman98@gmail.com" class="btn btn-primary">
+              <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+              asifshadman98@gmail.com
+            </a>
+            <a href="https://github.com/asifshadman98-crypto" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name">Asif Shadman Khan</p>
+        <p class="footer-role">Software Engineering Student</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://github.com/asifshadman98-crypto" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+          <svg class="icon-md" aria-hidden="true"><use href="#i-github"></use></svg>
+        </a>
+        <a href="mailto:asifshadman98@gmail.com" aria-label="Send an email">
+          <svg class="icon-md" aria-hidden="true"><use href="#i-mail"></use></svg>
+        </a>
+      </div>
+
+      <p class="footer-copy">© <span id="copyright-year">2026</span> Asif Shadman Khan</p>
+    </div>
+  </footer>
+
+  <script src="js/modules/navbar.js"></script>
+  <script src="js/modules/reveal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

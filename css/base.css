@@ -1,0 +1,116 @@
+/* ---------------------------------------------------------------
+   Design tokens + global element styles.
+   Mirrors tailwind.config.ts theme + app/globals.css.
+---------------------------------------------------------------- */
+
+:root {
+  /* Palette (from tailwind.config.ts) */
+  --background: #0a0f1a;
+  --surface: #0f1626;
+  --card: #111a2e;
+  --border: #1e2a44;
+  --accent: #38bdf8;
+  --accent-dim: #0ea5e9;
+  --muted: #8b98b8;
+
+  /* Tailwind slate/sky shades used across components */
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-900: #0f172a;
+  --sky-300: #7dd3fc;
+  --rose-400: #fb7185;
+  --amber-400: #fbbf24;
+  --emerald-400: #34d399;
+
+  /* Typography (Inter + JetBrains Mono, same as next/font setup) */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--slate-200);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  color: #fff;
+}
+
+/* Keep anchored sections clear of the fixed navbar */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Subtle dotted grid used behind the hero */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(56 189 248 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(56 189 248 / 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
